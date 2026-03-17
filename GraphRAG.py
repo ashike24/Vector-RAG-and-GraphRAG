@@ -1,7 +1,11 @@
+# Code 1
+
 !pip install -q langchain langchain-core langchain-openai langchain-community
 !pip install -q langchain-experimental langchain-huggingface
 !pip install -q neo4j sentence-transformers tiktoken
 !pip install langchain-neo4j
+
+# Code 2
 
 from neo4j import GraphDatabase
 
@@ -15,6 +19,8 @@ with driver.session(database="system") as session:
     for record in result:
         print(record["name"], "→ status:", record["currentStatus"])
 driver.close()
+
+# Code 3
 
 import os
 from langchain_community.document_loaders import TextLoader
